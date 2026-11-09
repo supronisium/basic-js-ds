@@ -5,140 +5,42 @@ const { NotImplementedError } = require('../lib');
 * Implement simple binary search tree according to task description
 * using Node from extensions
 */
-
 class BinarySearchTree {
-  constructor() {
-    this._root = null;
-  }
-
   root() {
-    return this._root;
+    // Remove line below and write your code here
+    throw new NotImplementedError('Not implemented');
   }
 
-  add(data) {
-    const newNode = new Node(data);
-
-    if (this._root === null) {
-      this._root = newNode;
-      return this;
-    }
-
-    let current = this._root;
-
-    while (true) {
-      if (data === current.data) {
-        return this;
-      }
-
-      if (data < current.data) {
-        if (current.left === null) {
-          current.left = newNode;
-          return this;
-        }
-        current = current.left;
-      } else {
-        if (current.right === null) {
-          current.right = newNode;
-          return this;
-        }
-        current = current.right;
-      }
-    }
+  add(/* data */) {
+    // Remove line below and write your code here
+    throw new NotImplementedError('Not implemented');
   }
 
-  find(data) {
-    let current = this._root;
-
-    while (current !== null) {
-      if (data === current.data) {
-        return current;
-      }
-
-      current = data < current.data
-        ? current.left
-        : current.right;
-    }
-
-    return null;
+  find(/* data */) {
+    // Remove line below and write your code here
+    throw new NotImplementedError('Not implemented');
   }
 
-  has(data) {
-    return this.find(data) !== null;
+  has(/* data */) {
+    // Remove line below and write your code here
+    throw new NotImplementedError('Not implemented');
   }
 
-  remove(data) {
-    const removeNode = (node, data) => {
-      if (node === null) {
-        return null;
-      }
-
-      if (data < node.data) {
-        node.left = removeNode(node.left, data);
-      } else if (data > node.data) {
-        node.right = removeNode(node.right, data);
-      } else {
-        // Case 1: No children
-        if (node.left === null && node.right === null) {
-          return null;
-        }
-
-        // Case 2: One child
-        if (node.left === null) {
-          return node.right;
-        }
-
-        if (node.right === null) {
-          return node.left;
-        }
-
-        // Case 3: Two children
-        // Find the smallest value in the right subtree
-        let successor = node.right;
-
-        while (successor.left !== null) {
-          successor = successor.left;
-        }
-
-        node.data = successor.data;
-        node.right = removeNode(node.right, successor.data);
-      }
-
-      return node;
-    };
-
-    this._root = removeNode(this._root, data);
-    return this;
+  remove(/* data */) {
+    // Remove line below and write your code here
+    throw new NotImplementedError('Not implemented');
   }
 
   min() {
-    if (this._root === null) {
-      return null;
-    }
-
-    let current = this._root;
-
-    while (current.left !== null) {
-      current = current.left;
-    }
-
-    return current.data;
+    // Remove line below and write your code here
+    throw new NotImplementedError('Not implemented');
   }
 
   max() {
-    if (this._root === null) {
-      return null;
-    }
-
-    let current = this._root;
-
-    while (current.right !== null) {
-      current = current.right;
-    }
-
-    return current.data;
+    // Remove line below and write your code here
+    throw new NotImplementedError('Not implemented');
   }
 }
-
 
 module.exports = {
   BinarySearchTree
